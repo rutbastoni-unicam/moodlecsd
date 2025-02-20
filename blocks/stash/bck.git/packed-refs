@@ -1,0 +1,34 @@
+# pack-refs with: peeled fully-peeled sorted 
+2879cde5887f12f55af47b9714a5028a5f13e33d refs/remotes/origin/bug-fixes
+3b571b179ee08d02da0149aa284647f17cc179b3 refs/remotes/origin/collections
+51c1c5bbb010fd151d05c942a1c36922f566b54a refs/remotes/origin/form-deprecation-fix
+7275a36b8b55613eab948e407714a548ae5b401d refs/remotes/origin/format_text_notice
+f36caf8c9489592c7e0f5edc9a711792e7e15f6c refs/remotes/origin/fulltradeform
+fca2793db545dcbc000c1f73a633865e57371d9e refs/remotes/origin/group-trade
+0b939837a4c3fc21c9e27e24b4a0c84234836025 refs/remotes/origin/header-helper
+d89fdf21d2a42b4e36b75392e279bd3bcb408026 refs/remotes/origin/item-categories
+395ce6f72fd91ac09f2bb297ae7d4932d6d8492c refs/remotes/origin/leaderboards
+7ed058aab88db29383565be04141531f0f9f39ba refs/remotes/origin/limited-items
+b1f293795c9a23edff33f15a07713cbce0a65181 refs/remotes/origin/master
+f8d9a7c1bc6968c4433d556207bee4d3ff0c6d6c refs/remotes/origin/new-webservices
+3c1c394c76bc242ef0deac557910e0228320da29 refs/remotes/origin/persistence-udpate
+2aa7e7c641ae4b8392f4598437ce625705ef9339 refs/remotes/origin/persistent-update
+4e379c93d06dcae6cf74cb38cc297d6a46c261f3 refs/remotes/origin/remove-event
+04a0adbc4a391f99929aec226237ed524bbcddaf refs/remotes/origin/remove-items
+b690d2a9adc5a6c5394a38f06941305357563a84 refs/remotes/origin/trade
+bd51484a9be13615d6a45997b5399214273b5359 refs/remotes/origin/trading
+917c08ff30f9f14dc6d2c53d5074024c9f773e0c refs/remotes/origin/user-swap
+aff0ba3521b88bfc3eef5a11bc14bb636e6f3cf9 refs/remotes/origin/user-swap-2
+6929fc18193dc33d8e316361cac542542981af82 refs/remotes/origin/user-swap-3
+439960012c711ba993063de42f97a59105b62d67 refs/remotes/origin/user-trade
+ebe766d3f9be9d69c660c318e0d44f1b1e471096 refs/tags/v1.3.2
+^7ed058aab88db29383565be04141531f0f9f39ba
+d4fa94540b5cbec626e9cffa1621294e159df052 refs/tags/v1.3.3
+420e55d6c9a7800b27c48bf648e5844c2f045147 refs/tags/v1.3.4
+^358557dc29209dbb6fd00e8c833bd96d8a36bb63
+aa83e83921287363b6f17d728c248bbb35fcc29c refs/tags/v2.0.0
+210a648a45317d799bd1f3bc3a0afa7205c051f4 refs/tags/v2.0.1
+9c92d130c67ee10a18b34abe72dbe676cfa2cec5 refs/tags/v2.0.2
+0f1b80a2c2e369099791dca3780b69d1ded9b046 refs/tags/v2.0.3
+04cf56c34e1e56a49d91db5696dd7616d9feec00 refs/tags/v2.1.0
+b1f293795c9a23edff33f15a07713cbce0a65181 refs/tags/v2.1.1
