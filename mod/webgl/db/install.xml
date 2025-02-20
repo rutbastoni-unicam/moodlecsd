@@ -1,0 +1,60 @@
+<XMLDB xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" PATH="mod/webgl/db" VERSION="20241208" COMMENT="XMLDB file for Moodle mod/webgl" xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd">
+  <TABLES>
+    <TABLE NAME="webgl" COMMENT="Default comment for webgl, please edit me">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="course" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="Course webgl activity belongs to"/>
+        <FIELD NAME="name" TYPE="char" LENGTH="255" NOTNULL="true" SEQUENCE="false" COMMENT="name field for moodle instances"/>
+        <FIELD NAME="intro" TYPE="text" NOTNULL="true" SEQUENCE="false" COMMENT="General introduction of the webgl activity"/>
+        <FIELD NAME="introformat" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="Format of the intro field (MOODLE, HTML, MARKDOWN...)"/>
+        <FIELD NAME="webgl_file" TYPE="char" LENGTH="255" NOTNULL="true" SEQUENCE="false" COMMENT="Uploaded WebGL File Name"/>
+        <FIELD NAME="storage_engine" TYPE="char" LENGTH="255" NOTNULL="true" SEQUENCE="false" COMMENT="storage engine : Azure BLOB, AWS S3"/>
+        <FIELD NAME="account_name" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false" COMMENT="Account Name"/>
+        <FIELD NAME="account_key" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false" COMMENT="Account Key"/>
+        <FIELD NAME="container_name" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false" COMMENT="Azure BLOB storage Container name"/>
+        <FIELD NAME="access_key" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false" COMMENT="S3 Access key"/>
+        <FIELD NAME="secret_key" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false" COMMENT="S3 secret key"/>
+        <FIELD NAME="endpoint" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false" COMMENT="S3 endpoint"/>
+        <FIELD NAME="bucket_name" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false" COMMENT="S3 bucket_name"/>
+        <FIELD NAME="cloudfront_url" TYPE="char" LENGTH="1" NOTNULL="true" SEQUENCE="false" COMMENT="cloudfront_url"/>
+        <FIELD NAME="store_zip_file" TYPE="char" LENGTH="1" NOTNULL="true" SEQUENCE="false" COMMENT="Also upload Uploaded zip file to Azure Blob storage"/>
+        <FIELD NAME="index_file_url" TYPE="char" LENGTH="255" NOTNULL="true" SEQUENCE="false" COMMENT="webgl index file url"/>
+        <FIELD NAME="iframe_height" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false" COMMENT="iframe height"/>
+        <FIELD NAME="iframe_width" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false" COMMENT="iframe width"/>
+        <FIELD NAME="before_description" TYPE="char" LENGTH="1" NOTNULL="false" SEQUENCE="false" COMMENT="before description"/>
+        <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="grade" TYPE="int" LENGTH="10" NOTNULL="false" DEFAULT="100" SEQUENCE="false" COMMENT="The maximum grade. Can be negative to indicate the use of a scale."/>
+        <FIELD NAME="completionminimumscore" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="Nonzero if a certain score, signaled from the webgl is required to mark this game completed for a user."/>
+        <FIELD NAME="completionlevels" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="Nonzero if a certain number completed levels, signaled from the webgl, is required to mark this game completed for a user."/>
+        <FIELD NAME="completionpuzzlesolved" TYPE="int" LENGTH="1" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="If this field is set to 1, then the activity will be automatically marked as 'complete' once the webgl signals that the user has completed the puzzle represented by this game."/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+      <INDEXES>
+        <INDEX NAME="course" UNIQUE="false" FIELDS="course"/>
+      </INDEXES>
+    </TABLE>
+    <TABLE NAME="webgl_achievements" COMMENT="Game achievements of users are stored in this table">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="webgl" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="userid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="score" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="completedlevels" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="solvedpuzzle" TYPE="int" LENGTH="1" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="Value set to 1 if the puzzle represented by this game was solved by the user"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+        <KEY NAME="webgl" TYPE="foreign" FIELDS="webgl" REFTABLE="webgl" REFFIELDS="id"/>
+        <KEY NAME="userid" TYPE="foreign" FIELDS="userid" REFTABLE="user" REFFIELDS="id"/>
+      </KEYS>
+      <INDEXES>
+        <INDEX NAME="webgluserachievements" UNIQUE="true" FIELDS="webgl, userid"/>
+      </INDEXES>
+    </TABLE>
+  </TABLES>
+</XMLDB>

@@ -1,0 +1,65 @@
+.path-mod-webgl {
+    display: block;
+    margin: 0 !important;
+}
+
+.path-mod-webgl #page {
+    height: 100%;
+}
+
+.path-mod-webgl #page .embedded-main {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.path-mod-webgl #page .embedded-main div[role="main"] {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.path-mod-webgl .webgl-iframe-content-loader {
+    background: #fff;
+    flex: 1;
+    width: 100%;
+}
+
+.path-mod-webgl .iframe {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+}
+
+.path-mod-webgl .course-footer-nav {
+    position: relative;
+    left: 0;
+    bottom: 10%;
+    right: 0;
+    width: 100%;
+}
+
+.path-mod-webgl hr {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border: 0;
+    border-top: 0 !important;
+}
+
+.path-mod-webgl #activity-link {
+    position: relative;
+    padding: 14px 20px 14px 20px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 5px;
+    font-size: .85rem;
+    font-weight: 500;
+    line-height: 180%;
+    text-decoration: none;
+    -webkit-transition: all 350ms ease;
+    -o-transition: all 350ms ease;
+    transition: all 350ms ease;
+}
